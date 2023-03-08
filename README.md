@@ -25,6 +25,7 @@ Run ``speechToText_streaming.mlx`` to perform speech-to-text conversion on strea
 
 ## Workflow Details
 **1. Overview**
+
 Performing speech-to-text transcription in real time is composed of the following steps:
 - Build the inference pipeline Emformer RNN-T is composed of three components: feature extractor, decoder and token processor. This is implemented in the streamingInfer method of the Live_Stream_Speech_Recognition.py file.
 - Format the waveform into chunks of expected cached inputs. This is implemented in the cacher method of the Live_Stream_Speech_Recognition.py file.
