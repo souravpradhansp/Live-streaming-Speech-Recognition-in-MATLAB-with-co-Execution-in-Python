@@ -40,3 +40,29 @@ We use [torchaudio.pipelines.EMFORMER_RNNT_BASE_LIBRISPEECH](https://pytorch.org
 Streaming inference works on input data with overlap. Emformer RNN-T model treats the newest portion of the input data as the “right context” — a preview of future context. In each inference call, the model expects the main segment to start from this right context from the previous inference call. The following figure illustrates this:
 
 ![emformer_rnnt_context image](https://github.com/souravpradhansp/Live-streaming-Speech-Recognition-in-MATLAB-with-co-Execution-in-Python/blob/main/images/emformer_rnnt_context.png?raw=true)
+
+**3. Configure the Audio Stream**
+
+As previously explained, Emformer RNN-T model expects input data with overlaps; so we make a helper method called cacher that caches a part of input data from MATLAB as right context and then appends it to the next input data from MATLAB.
+
+The following figure illustrates this.
+
+![emformer_rnnt_streamer_context image](https://github.com/souravpradhansp/Live-streaming-Speech-Recognition-in-MATLAB-with-co-Execution-in-Python/blob/main/images/emformer_rnnt_streamer_context.png?raw=true)
+
+**4. Run the streaming inference**
+
+Finally, we run the recognition.
+
+First, we initialize the dsp.AsyncBuffer object in MATLAB and in Python: context cacher, and state and hypothesis that are used by decoder to carry over the decoding state between inference calls.
+
+Next we, run the inference.
+
+For the sake of better display, we create a loop, which processes the source audio up to the given time and calls the inference repeatedly.
+
+## License
+The license is available in the [License.txt](License.txt) file in this repository.
+
+## References
+[1] https://pytorch.org/audio/stable/tutorials/online_asr_tutorial.html
+
+Copyright 2023 The MathWorks, Inc.
