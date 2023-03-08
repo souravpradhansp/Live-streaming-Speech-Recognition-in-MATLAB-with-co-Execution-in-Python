@@ -39,3 +39,4 @@ We use [torchaudio.pipelines.EMFORMER_RNNT_BASE_LIBRISPEECH](https://pytorch.org
 
 Streaming inference works on input data with overlap. Emformer RNN-T model treats the newest portion of the input data as the “right context” — a preview of future context. In each inference call, the model expects the main segment to start from this right context from the previous inference call. The following figure illustrates this:
 
+![emformer_rnnt_context image](https://github.com/souravpradhansp/Live-streaming-Speech-Recognition-in-MATLAB-with-co-Execution-in-Python/blob/main/images/emformer_rnnt_context.png?raw=true)
