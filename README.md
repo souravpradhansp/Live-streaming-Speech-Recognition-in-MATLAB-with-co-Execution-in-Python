@@ -30,3 +30,11 @@ Performing speech-to-text transcription in real time is composed of the followin
 - Build the inference pipeline Emformer RNN-T is composed of three components: feature extractor, decoder and token processor. This is implemented in the streamingInfer method of the Live_Stream_Speech_Recognition.py file.
 - Format the waveform into chunks of expected cached inputs. This is implemented in the cacher method of the Live_Stream_Speech_Recognition.py file.
 - Pass data through the pipeline.
+
+**2. Construct the Pipeline**
+
+Pre-trained model weights and related pipeline components are bundled as [torchaudio.pipelines.RNNTBundle;](https://pytorch.org/audio/stable/generated/torchaudio.pipelines.RNNTBundle.html#torchaudio.pipelines.RNNTBundle).
+
+We use torchaudio.pipelines.EMFORMER_RNNT_BASE_LIBRISPEECH, which is a Emformer RNN-T model trained on LibriSpeech dataset.
+Streaming inference works on input data with overlap. Emformer RNN-T model treats the newest portion of the input data as the “right context” — a preview of future context. In each inference call, the model expects the main segment to start from this right context from the previous inference call. The following figure illustrates this:
+
