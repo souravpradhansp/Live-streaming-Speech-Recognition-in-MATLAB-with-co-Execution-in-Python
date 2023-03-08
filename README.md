@@ -7,7 +7,7 @@ This repo shows how to use Emformer RNN-T and audio streaming API in MATLAB to p
 ## Requirements
 - [MATLAB&reg;](http://www.mathworks.com) R2017a or later
 - [Audio Toolbox&trade;](https://www.mathworks.com/products/audio.html)
-- [Python 3.9;](https://www.python.org/downloads/release/python-390/)
+- [Python 3.9](https://www.python.org/downloads/release/python-390/)
 
 ## Get Started
 Download or clone this repositiory to your machine and open it in MATLAB&reg;. Download [Python 3.9;](https://www.python.org/downloads/release/python-390/) and make it the default version of the Python interpreter in MATLAB using the instructions mentioned on this page. 
@@ -33,8 +33,9 @@ Performing speech-to-text transcription in real time is composed of the followin
 
 **2. Construct the Pipeline**
 
-Pre-trained model weights and related pipeline components are bundled as [torchaudio.pipelines.RNNTBundle;](https://pytorch.org/audio/stable/generated/torchaudio.pipelines.RNNTBundle.html#torchaudio.pipelines.RNNTBundle).
+Pre-trained model weights and related pipeline components are bundled as [torchaudio.pipelines.RNNTBundle](https://pytorch.org/audio/stable/generated/torchaudio.pipelines.RNNTBundle.html#torchaudio.pipelines.RNNTBundle).
 
-We use torchaudio.pipelines.EMFORMER_RNNT_BASE_LIBRISPEECH, which is a Emformer RNN-T model trained on LibriSpeech dataset.
+We use [torchaudio.pipelines.EMFORMER_RNNT_BASE_LIBRISPEECH](https://pytorch.org/audio/stable/generated/torchaudio.pipelines.EMFORMER_RNNT_BASE_LIBRISPEECH.html#torchaudio.pipelines.EMFORMER_RNNT_BASE_LIBRISPEECH), which is a Emformer RNN-T model trained on LibriSpeech dataset.
+
 Streaming inference works on input data with overlap. Emformer RNN-T model treats the newest portion of the input data as the “right context” — a preview of future context. In each inference call, the model expects the main segment to start from this right context from the previous inference call. The following figure illustrates this:
 
