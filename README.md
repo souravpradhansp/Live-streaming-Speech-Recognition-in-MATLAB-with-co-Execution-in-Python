@@ -20,4 +20,12 @@ After that, on the MATLAB Command Line Interface, execute the following commands
 
 ``!python pip install sentencepiece==0.1.97``
 
+
 Run ``speechToText_streaming.mlx`` to perform speech-to-text conversion on streaming audio input.
+
+## Workflow Details
+**1. Overview**
+Performing speech-to-text transcription in real time is composed of the following steps:
+- Build the inference pipeline Emformer RNN-T is composed of three components: feature extractor, decoder and token processor. This is implemented in the streamingInfer method of the Live_Stream_Speech_Recognition.py file.
+- Format the waveform into chunks of expected cached inputs. This is implemented in the cacher method of the Live_Stream_Speech_Recognition.py file.
+- Pass data through the pipeline.
