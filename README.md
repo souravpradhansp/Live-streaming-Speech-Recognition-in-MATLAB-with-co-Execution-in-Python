@@ -9,6 +9,9 @@ This repo shows how to use Emformer RNN-T and audio streaming API in MATLAB to p
 - [MATLAB&reg;](http://www.mathworks.com) R2022a or later
 - [Audio Toolbox&trade;](https://www.mathworks.com/products/audio.html)
 - [Python 3.9](https://www.python.org/downloads/release/python-390/)
+- [PyTorch](https://pytorch.org/) (tested with 1.13.0)
+- [Torchaudio](https://pytorch.org/audio/stable/index.html) (tested with 0.13.0)
+- [SentencePiece](https://pypi.org/project/sentencepiece/) (tested with 0.1.97))
 
 ## Get Started
 Download or clone this repositiory to your machine and open it in MATLAB&reg;. Download [Python 3.9](https://www.python.org/downloads/release/python-390/) and make it the default version of the Python interpreter in MATLAB using the instructions mentioned on this page. 
