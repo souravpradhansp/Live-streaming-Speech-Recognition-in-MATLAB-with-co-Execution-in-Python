@@ -14,18 +14,27 @@ This repo shows how to use Emformer RNN-T and audio streaming API in MATLAB to p
 - [SentencePiece](https://pypi.org/project/sentencepiece/) (tested with 0.1.97))
 
 ## Get Started
-Download or clone this repositiory to your machine and open it in MATLAB&reg;. Download [Python 3.9](https://www.python.org/downloads/release/python-390/) and make it the default version of the Python interpreter in MATLAB using the instructions mentioned on this page. 
+Download or clone this repositiory to your machine and open it in MATLAB&reg;. Set up the Python environment by first running commands at a command prompt (Windows&reg machine) and then, set up the Python interpreter in MATLAB.
 
-After that, on the MATLAB Command Line Interface, execute the following commands to install the required Python libraries:
+Go to your working folder. Create the Python virtual environment ``venv`` in a command prompt outside MATLAB. If you have multiple versions of Python installed, you can specify which Python version to use for your virtual environment.
 
-``!python pip install torch==1.13.0``
+``python -m venv env``
 
-``!python pip install torchaudio==0.13.0``
+Activate the Python virtual environment ``env`` in your working folder.
 
-``!python pip install sentencepiece==0.1.97``
+``env\Scripts\activate``
 
+Install the necessary Python libraries for this example. Check the installed versions of the libraries.
 
-Run ``speechToText_streaming.mlx`` to perform speech-to-text conversion on streaming audio input.
+``pip install numpy torch==1.13.0 torchaudio==0.13.0 sentencepiece==0.1.97``
+
+``python -m pip show numpy torch torchaudio sentencepiece``
+
+From MATLAB, set up the Python interpreter for MATLAB.
+
+``pe = pyenv(ExecutionMode="OutOfProcess",Version="env\Scripts\python.exe");``
+
+Run ``speechToText_streaming_from_audio_device.mlx`` to perform speech-to-text conversion on streaming audio device input and ``speechToText_streaming_from_audio_file.mlx`` on audio file input.
 
 ## Workflow Details
 **1. Overview**
