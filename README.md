@@ -6,7 +6,7 @@ This repo shows how to use Emformer RNN-T and audio streaming API in MATLAB to p
 **Creator**: MathWorks Development
 
 ## Requirements
-- [MATLAB&reg;](http://www.mathworks.com) R2017a or later
+- [MATLAB&reg;](http://www.mathworks.com) R2022a or later
 - [Audio Toolbox&trade;](https://www.mathworks.com/products/audio.html)
 - [Python 3.9](https://www.python.org/downloads/release/python-390/)
 
@@ -65,5 +65,6 @@ The license is available in the [License.txt](License.txt) file in this reposito
 
 ## References
 [1] https://pytorch.org/audio/stable/tutorials/online_asr_tutorial.html
+[2] https://www.mathworks.com/help/audio/ug/speech2text.html
 
 Copyright 2023 The MathWorks, Inc.
