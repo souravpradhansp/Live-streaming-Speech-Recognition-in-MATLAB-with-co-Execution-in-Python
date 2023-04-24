@@ -65,6 +65,7 @@ The license is available in the [License.txt](License.txt) file in this reposito
 
 ## References
 [1] https://pytorch.org/audio/stable/tutorials/online_asr_tutorial.html
+
 [2] https://www.mathworks.com/help/audio/ug/speech2text.html
 
 Copyright 2023 The MathWorks, Inc.
