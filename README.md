@@ -20,9 +20,11 @@ Go to your working folder. Create the Python virtual environment ``venv`` in a c
 
 ``python -m venv env``
 
+
 Activate the Python virtual environment ``env`` in your working folder.
 
 ``env\Scripts\activate``
+
 
 Install the necessary Python libraries for this example. Check the installed versions of the libraries.
 
@@ -30,12 +32,13 @@ Install the necessary Python libraries for this example. Check the installed ver
 
 ``python -m pip show numpy torch torchaudio sentencepiece``
 
+
 From MATLAB, set up the Python interpreter for MATLAB.
 
 ``pe = pyenv(ExecutionMode="OutOfProcess",Version="env\Scripts\python.exe");``
 
 
-Run ``speechToText_streaming_from_audio_device.mlx`` to perform speech-to-text conversion on streaming audio device input and ``speechToText_streaming_from_audio_file.mlx`` on audio file input.
+Run ``speechToText_streaming_from_audio_device.mlx`` to perform speech-to-text conversion on streaming audio device input and ``speechToText_streaming_from_audio_file.mlx`` on audio file input. ``comparisonBetweenCoExecutionAndDeepSpeech.mlx`` compares the performance between the Co-Execution workflow and Deep Speech.
 
 ## Workflow Details
 **1. Overview**
