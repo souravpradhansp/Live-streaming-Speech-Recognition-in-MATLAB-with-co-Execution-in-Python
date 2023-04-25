@@ -1,4 +1,4 @@
-# This code is used in the 'speechToText_streaming.mlx' example
+# This code is used in the 'speechToText_streaming_from_audio_device.mlx' and 'speechToText_streaming_from_audio_file.mlx' example
 # Copyright 2023 The MathWorks, Inc.
 
 import torch
