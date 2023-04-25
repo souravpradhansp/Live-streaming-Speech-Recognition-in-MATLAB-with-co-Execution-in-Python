@@ -15,7 +15,7 @@ class SpeechRecognizer():
         self.state = None
         self.hypothesis = None
 
-    def streamingInfer(self, segment: torch.Tensor):
+    def streamingInfer(self, segment):
         segment = torch.Tensor(segment)
         features, length = self.streaming_feature_extractor(segment)
         hypos, self.state = self.decoder.infer(
@@ -25,7 +25,7 @@ class SpeechRecognizer():
         transcript = self.token_processor(self.hypothesis[0], lstrip=False)
         return transcript
 
-    def nonStreamingInfer(self, segment: torch.Tensor):
+    def nonStreamingInfer(self, segment):
         segment = torch.Tensor(segment)
         with torch.no_grad():
             features, length = self.non_streaming_feature_extractor(segment)
